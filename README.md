@@ -1,5 +1,4 @@
 # Newmaterialmasterdatavalidation
-# Advanced Material Description Validator
 
 **Autor:** Max Keller (DC/BDC)
 **Datum:** 29.07.2024
@@ -29,9 +28,9 @@ Stellen Sie sicher, dass Python 3.x auf Ihrem System installiert ist. Die folgen
 Sie können die benötigten Bibliotheken einfach über `pip` installieren:
 ```bash
 pip install pandas openpyxl
+```
 
-
-3. Ordnerstruktur
+## 3. Ordnerstruktur
 Damit das Skript die Eingabedateien und Wörterbücher korrekt findet, muss die folgende Ordnerstruktur eingehalten werden:
 
 .
@@ -53,11 +52,11 @@ Damit das Skript die Eingabedateien und Wörterbücher korrekt findet, muss die 
      └── positive_words.txt
 
 
-4. Konfiguration
+## 4. Konfiguration
 Alle wichtigen Einstellungen können direkt am Anfang der main.py-Datei angepasst werden.
 
-# --- CONFIGURATION ---
-# Dateinamen und Spalten
+--- CONFIGURATION ---
+Dateinamen und Spalten
 SOURCE_FILENAME = 'data\input_data\TEST_Data_for_REGEX_V2.xlsx'
 OUTPUT_FILENAME = 'data\output_data\output.xlsx'
 SOURCE_COLUMN_NAME = 'Typkurzbezeichnung' # Spalte mit dem zu prüfenden Text
@@ -65,7 +64,7 @@ CONDITION_COLUMN = 'MArt'                 # Spalte für die Bedingung
 TARGET_FLAG_COLUMN = 'B'                  # Ergebnisspalte für das Flag (1/"")
 TARGET_REASON_COLUMN = 'lsg'              # Ergebnisspalte für den Grund
 
-# Bedingungswerte
+Bedingungswerte
 CONDITION_VALUES = ['BREX', 'KAUF']       # Validierung nur für diese Werte in 'MArt'
 
 
@@ -74,7 +73,7 @@ OUTPUT_FILENAME: Pfad und Name für die zu erstellende Excel-Ausgabedatei.
 SOURCE_COLUMN_NAME: Name der Spalte, die die zu validierenden Materialbezeichnungen enthält.
 CONDITION_COLUMN / CONDITION_VALUES: Steuern, welche Zeilen basierend auf dem Wert in dieser Spalte validiert werden.
 TARGET_FLAG_COLUMN / TARGET_REASON_COLUMN: Namen der Spalten in der Zieldatei, in die die Ergebnisse geschrieben werden.
-5. Ausführung
+## 5. Ausführung
 Um das Skript auszuführen, öffnen Sie eine Kommandozeile (Terminal, PowerShell etc.), navigieren Sie in das Hauptverzeichnis des Projekts (dorthin, wo main.py liegt) und führen Sie den folgenden Befehl aus:
 
 python main.py
@@ -91,16 +90,16 @@ Opening the new workbook to write results...
 Writing data to column 'B'...
 Writing data to column 'lsg'...
 Saving final workbook to 'data\output_data\output.xlsx'...
-✅ Successfully saved the file!
+Successfully saved the file!
 
-==================================================
-✅ SUCCESS: Workflow completed without errors.
-==================================================
+
+**SUCCESS: Workflow completed without errors.** 
+
 
 
 Nach erfolgreicher Ausführung finden Sie die Ergebnisdatei output.xlsx im Ordner data/output_data/.
 
-6. Fehlerbehandlung
+## 6. Fehlerbehandlung
 Das Skript verfügt über eine grundlegende Fehlerbehandlung für häufige Probleme:
 
 FileNotFoundError: Wird ausgelöst, wenn die Eingabedatei oder ein Wörterbuch nicht gefunden wird. Überprüfen Sie die Pfade in der Konfiguration und die Ordnerstruktur.
