@@ -32,24 +32,29 @@ pip install pandas openpyxl
 
 ## 3. Ordnerstruktur
 Damit das Skript die Eingabedateien und Wörterbücher korrekt findet, muss die folgende Ordnerstruktur eingehalten werden:
-
-.
-├── main.py                 # Das Hauptskript zum Ausführen
-├── utils/
-│   ├── __init__.py
-│   ├── io_utils.py         # Hilfsfunktionen für Datei-I/O
-│   └── validator.py        # Die Kernlogik der Textvalidierung
-└── data/
- ├── input_data/
- │   └── TEST_Data_for_REGEX_V2.xlsx  # Ihre Eingabedatei
- ├── output_data/
- │   └── (hier wird output.xlsx erstellt)
- └── dictionaries/
-     ├── german_stopwords.txt
-     ├── german_words.txt
-     ├── french_words.txt
-     ├── english_words.txt
-     └── positive_words.txt
+```bash
+projekt_root/
+├── Data/
+│   ├── dictionaries/
+│   │   ├── german_stopwords.txt
+│   │   ├── german_words.txt
+│   │   ├── french_words.txt
+│   │   ├── english_words.txt
+│   │   └── positive_words.txt
+│   ├── input_data/
+│   │   └── TEST_Data_for_REGEX_V2.xlsx
+│   └── output_data/
+│       └── (hier wird output.xlsx erstellt)
+│
+├── src/
+│   ├── main.py
+│   ├── test.ipynb
+│   ├── README.md
+│   └── utils/
+│       ├── io_utils.py
+│       ├── validator.py
+│       └── __pycache__/
+```
 
 
 ## 4. Konfiguration
